@@ -1,3 +1,21 @@
+```
+⏳ Installing autograder packages (this may take a few minutes)...
+✅ Autograder packages installed.
+
+Running test: Autograder Setup... 🧪                                             
+
+Running test: write_course_offered... 🧪                                         
+✅ write_course_offered passed! 🚀 
+
+Running test: write_course_not_offered... 🧪                                     
+✅ write_course_not_offered passed! 🚀 
+
+Running test: Autograder Teardown... 🧪                                          
+
+🚀🚀🚀 Congratulations, your code passed all the autograder tests! 🚀🚀🚀        
+```
+below is the original text.
+
 # Assignment 1: SimpleEnroll
 
 Due Friday, April 25th, at 11:59PM

@@ -1,3 +1,21 @@
+```
+⏳ Installing autograder packages (this may take a few minutes)...
+✅ Autograder packages installed.
+
+Running test: Check C++ Compiler... 🧪                                           
+✅ Check C++ Compiler passed! 🚀 
+
+Running test: Check Git Installation... 🧪                                       
+✅ Check Git Installation passed! 🚀 
+
+Running test: Check Python Installation... 🧪                                    
+✅ Check Python Installation passed! 🚀 
+
+🚀🚀🚀 Congratulations, your code passed all the autograder tests! 🚀🚀🚀        
+```
+
+below is the original text.
+
 <img src="docs/header.png" width="100%" />
 
 # Assignment 0: Setup!
