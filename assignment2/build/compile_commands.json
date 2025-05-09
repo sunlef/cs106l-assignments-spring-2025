@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/mnt/c/Users/cyan_/OneDrive/homework/cs106l-assignments-spring-2025/assignment2/build",
+  "command": "/usr/bin/c++   -std=gnu++23 -o CMakeFiles/main.dir/main.cpp.o -c /mnt/c/Users/cyan_/OneDrive/homework/cs106l-assignments-spring-2025/assignment2/main.cpp",
+  "file": "/mnt/c/Users/cyan_/OneDrive/homework/cs106l-assignments-spring-2025/assignment2/main.cpp",
+  "output": "CMakeFiles/main.dir/main.cpp.o"
+}
+]

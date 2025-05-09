@@ -1,3 +1,19 @@
+```
+⏳ Installing autograder packages (this may take a few minutes)...
+✅ Autograder packages installed.
+
+Running test: test_applicants_set... 🧪                                          
+✅ test_applicants_set passed! 🚀 
+
+Running test: test_match... 🧪                                                   
+✅ Matched student 'Stefan Brooks'
+✅ test_match passed! 🚀 
+
+🚀🚀🚀 Congratulations, your code passed all the autograder tests! 🚀🚀🚀        
+🔍 Virtual environment not found. Creating one in 'autograder/'...
+✅ Virtual environment created.
+```
+below is the original text.
 <p align="center">
   <img src="docs/marriage_pact.png" alt="Marriage Pact Logo" />
 </p>
