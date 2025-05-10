@@ -16,9 +16,9 @@ Corpus tokenize(std::string &source) {
 
   Corpus tokens;
 
-  auto inserIt = std::inserter(tokens, tokens.end());
   std::transform(spacesIts.begin(), spacesIts.end() - 1, spacesIts.begin() + 1,
-                 inserIt, [&source](auto const &it1, auto const &it2) {
+                 std::inserter(tokens, tokens.end()),
+                 [&source](auto const &it1, auto const &it2) {
                    return Token{source, it1, it2};
                  });
 
