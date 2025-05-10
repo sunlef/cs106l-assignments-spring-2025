@@ -1,3 +1,76 @@
+```
+Loading dictionary... loaded 464811 unique words.
+Tokenizing input... got 2 tokens.
+
+hello <<wrld>>
+
+wrld: {rld, wald, weld, wild, wold, world, wyld}
+```
+
+```
+Loading dictionary... loaded 464811 unique words.
+Tokenizing input... got 4 tokens.
+
+This string is <<mispelled>>
+
+mispelled: {dispelled, misspelled}
+```
+
+```
+Loading dictionary... loaded 464811 unique words.
+Tokenizing input... got 84 tokens.
+
+Many years later, as he faced the firing squad, Colonel <<Aureliano>> Buendía
+was to remember that distant afternoon when his father took him to discover ice.
+
+At that time Macondo was a <<vilage>> of twenty adobe houses, built on the bank
+of a river of clear water that ran along a bed of <<pollished>> stones, which were
+white and enormous, like prehistoric eggs. The world was so recent that many
+things lacked names, and in order to indicate them it was <<necesary>> to point.
+
+Aureliano: {aurelian}
+vilage: {milage, pilage, silage, viage, village, vinage, visage, volage}
+pollished: {polished}
+necesary: {necessary}
+```
+
+```
+⏳ Installing autograder packages (this may take a few minutes)...
+✅ Autograder packages installed.
+
+Running test: Autograder Setup... 🧪                                             
+
+Running test: tokenize... 🧪                                                     
+🔎 tokenize called method find_all
+🔎 tokenize called method std::transform
+🔎 tokenize called method std::inserter
+🔎 tokenize called method std::erase_if
+🔎 tokenize has no for/while loops!
+✅ tokenize passed! 🚀 
+
+Running test: spellcheck... 🧪                                                   
+🔎 spellcheck called method std::ranges::views::filter
+🔎 spellcheck called method std::ranges::views::transform
+🔎 spellcheck called method levenshtein
+🔎 spellcheck has no for/while loops!
+✅ spellcheck passed! 🚀 
+
+Running test: Check submission has no helper functions... 🧪                     
+✅ Check submission has no helper functions passed! 🚀 
+
+Running test: Spellcheck... 🧪                                                   
+🔎 (kafka).txt spellcheck matched solution!
+🔎 (marquez).txt spellcheck matched solution!
+🔎 (morrison).txt spellcheck matched solution!
+🔎 gibberish.txt spellcheck matched solution!
+🔎 melville.txt spellcheck matched solution!
+🔎 orwell.txt spellcheck matched solution!
+🔎 tolstoy.txt spellcheck matched solution!
+✅ Spellcheck passed! 🚀 
+
+🚀🚀🚀 Congratulations, your code passed all the autograder tests! 🚀🚀🚀        
+```
+below is the original text.
 <p align="center">
   <img src="docs/header.png" alt="Header image with the text, in a code font, [~]$ ispell, on a black background" />
 </p>

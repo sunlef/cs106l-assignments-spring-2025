@@ -10,30 +10,33 @@
 #include "autograder/utils.hpp"
 #include "spellcheck.h"
 
-void print_output(const std::string& source, const std::set<Misspelling>& Misspellings) {
+void print_output(const std::string &source,
+                  const std::set<Misspelling> &Misspellings) {
   std::string_view sv(source);
   size_t last_ofs = 0;
-  for (const auto& Misspelling : Misspellings) {
+  for (const auto &Misspelling : Misspellings) {
     // Print text before the Misspelling
     std::cout << sv.substr(last_ofs, Misspelling.token.src_offset - last_ofs);
 
     std::cout << ansi::fg_red << "<<";
-    std::cout << sv.substr(Misspelling.token.src_offset, Misspelling.token.content.size());
+    std::cout << sv.substr(Misspelling.token.src_offset,
+                           Misspelling.token.content.size());
     std::cout << ">>" << ansi::reset;
     last_ofs = Misspelling.token.src_offset + Misspelling.token.content.size();
   }
 
   std::cout << sv.substr(last_ofs) << "\n\n";
 
-  for (const auto& Misspelling : Misspellings) {
+  for (const auto &Misspelling : Misspellings) {
     std::cout << ansi::fg_red;
-    std::cout << sv.substr(Misspelling.token.src_offset, Misspelling.token.content.size());
+    std::cout << sv.substr(Misspelling.token.src_offset,
+                           Misspelling.token.content.size());
     std::cout << ansi::reset;
 
     std::cout << ": {";
 
     bool first = true;
-    for (const auto& suggestion : Misspelling.suggestions) {
+    for (const auto &suggestion : Misspelling.suggestions) {
       if (!first)
         std::cout << ", ";
       std::cout << suggestion;
@@ -61,10 +64,11 @@ void print_success() {
   std::mt19937 gen(rd());
   std::uniform_int_distribution<size_t> dist(0, messages.size() - 1);
 
-  std::cout << ansi::fg_green << messages[dist(gen)] << ansi::reset << std::endl;
+  std::cout << ansi::fg_green << messages[dist(gen)] << ansi::reset
+            << std::endl;
 }
 
-int main(int argc, char** argv) {
+int main(int argc, char **argv) {
   if (argc == 1) {
     return run_autograder();
   }
@@ -102,7 +106,8 @@ int main(int argc, char** argv) {
 
   std::ifstream dict_stream(dictionary_file);
   if (!dict_stream.is_open()) {
-    std::cerr << "Failed to open dict file '" << dictionary_file << "'" << std::endl;
+    std::cerr << "Failed to open dict file '" << dictionary_file << "'"
+              << std::endl;
     return EXIT_FAILURE;
   }
 
@@ -110,26 +115,26 @@ int main(int argc, char** argv) {
 
   std::string dict_contents = read_stream(dict_stream);
 
-  Timer tokenize_dict_timer { summary, "Tokenizing dictionary" };
+  Timer tokenize_dict_timer{summary, "Tokenizing dictionary"};
   Corpus dictionary_tokens = tokenize(dict_contents);
   tokenize_dict_timer.stop();
   tokenize_dict_timer.set_trials(dictionary_tokens.size());
 
   Dictionary dictionary;
   std::for_each(dictionary_tokens.begin(), dictionary_tokens.end(),
-                [&](const Token& t) { dictionary.insert(t.content); });
+                [&](const Token &t) { dictionary.insert(t.content); });
 
   std::cout << "loaded " << dictionary.size() << " unique words." << std::endl;
   std::cout << "Tokenizing input... ";
 
-  Timer tokenize_source_timer { summary, "Tokenizing input"};
+  Timer tokenize_source_timer{summary, "Tokenizing input"};
   Corpus source = tokenize(input);
   tokenize_source_timer.stop();
   tokenize_source_timer.set_trials(source.size());
 
   std::cout << "got " << source.size() << " tokens." << ansi::reset << "\n\n";
 
-  Timer spellcheck_timer { summary, "Spellcheck", source.size() };
+  Timer spellcheck_timer{summary, "Spellcheck", source.size()};
   std::set<Misspelling> Misspellings = spellcheck(source, dictionary);
   spellcheck_timer.stop();
 
