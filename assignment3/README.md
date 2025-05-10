@@ -1,3 +1,47 @@
+```
+-99 100 4 7.14 1.785
+⏳ Installing autograder packages (this may take a few minutes)...
+✅ Autograder packages installed.
+
+Running test: Autograder Setup... 🧪                                             
+Autograder found class Accumulator<double> inside class.h!
+
+Running test: #1 / Public parameterized constructor... 🧪                        
+⏩ Disregarding Accumulator<double>::Accumulator() [constructor], has no arguments
+🔍 Found Accumulator<double>::Accumulator(double const & arg0) [constructor]!
+✅ #1 / Public parameterized constructor passed! 🚀 
+
+Running test: #2 / Public parameterless constructor... 🧪                        
+🔍 Found Accumulator<double>::Accumulator() [constructor]!
+✅ #2 / Public parameterless constructor passed! 🚀 
+
+Running test: #3 / Private field... 🧪                                           
+🔍 Found Accumulator<double>::_sum [variable]!
+✅ #3 / Private field passed! 🚀 
+
+Running test: #4 / Private member function... 🧪                                 
+⏩ Disregarding double Accumulator<double>::getSum() const [member function], not private
+⏩ Disregarding double Accumulator<double>::getMin() const [member function], not private
+⏩ Disregarding double Accumulator<double>::getMax() const [member function], not private
+⏩ Disregarding size_t Accumulator<double>::getCount() const [member function], not private
+⏩ Disregarding void Accumulator<double>::setCount(size_t x) [member function], not private
+⏩ Disregarding void Accumulator<double>::add(double const & x) [member function], not private
+⏩ Disregarding double Accumulator<double>::getMean() [member function], not private
+⏩ Disregarding void Accumulator<double>::reset() [member function], not private
+🔍 Found std::string Accumulator<double>::test() [member function]!
+✅ #4 / Private member function passed! 🚀 
+
+Running test: #5 / Public getter function... 🧪                                  
+🔍 Found double Accumulator<double>::getSum() const [member function]!
+✅ #5 / Public getter function passed! 🚀 
+
+Running test: #6 / Public setter function... 🧪                                  
+🔍 Found void Accumulator<double>::setCount(size_t x) [member function]!
+✅ #6 / Public setter function passed! 🚀 
+
+🚀🚀🚀 Congratulations, your code passed all the autograder tests! 🚀🚀🚀        
+```
+below is the original text.
 <p align="center">
   <img src="docs/bjarne.jpg" alt="Bjarne Stroustrup writing the declaration of a class on a whiteboard" />
 </p>
