@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/main.dir/main.cpp.o -o /mnt/c/Users/cyan_/OneDrive/homework/cs106l-assignments-spring-2025/assignment2/main 

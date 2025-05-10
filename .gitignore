@@ -1,3 +1,9 @@
+**/build
+**/.cache
+**/a.txt
+**/.vscode
+**/main
+
 # Solution files
 *.soln
 
