@@ -28,10 +28,11 @@ void test_memory_leak_exit_code() {
 
 template <typename T>
 concept printable = requires(T t) {
-  { std::cout << t } -> std::same_as<std::ostream&>;
+  { std::cout << t } -> std::same_as<std::ostream &>;
 };
 
-template <typename TUser> void test_insertion_operator() {
+template <typename TUser>
+void test_insertion_operator() {
   if constexpr (printable<TUser>) {
     TUser alice("Alice");
     std::cout << alice << "\n";
@@ -50,7 +51,8 @@ template <typename TUser> void test_insertion_operator() {
   }
 }
 
-template <typename TUser> void test_destructor() {
+template <typename TUser>
+void test_destructor() {
   MemoryDiagnostics::MemoryGuard guard(
       "Did you remember to delete[] _friends inside the destructor?");
   TUser alice("Alice");
@@ -59,7 +61,8 @@ template <typename TUser> void test_destructor() {
   }
 }
 
-template <typename TUser> void test_copy_constructor() {
+template <typename TUser>
+void test_copy_constructor() {
   if constexpr (printable<TUser>) {
     if constexpr (std::is_copy_constructible_v<TUser>) {
       TUser a("Alice");
@@ -84,11 +87,13 @@ template <typename TUser> void test_copy_constructor() {
   }
 }
 
-template <typename TUser> void test_copy_assignment() {
+template <typename TUser>
+void test_copy_assignment() {
   if constexpr (printable<TUser>) {
     if constexpr (std::is_copy_assignable_v<TUser>) {
       MemoryDiagnostics::MemoryGuard guard(
-          "Did you remember to delete[] the old value of _friends inside the copy "
+          "Did you remember to delete[] the old value of _friends inside the "
+          "copy "
           "assignment operator?");
 
       TUser a("Alice");
@@ -115,7 +120,8 @@ template <typename TUser> void test_copy_assignment() {
   }
 }
 
-template <typename TUser> void test_move_constructor() {
+template <typename TUser>
+void test_move_constructor() {
   if constexpr (std::move_constructible<TUser>) {
     std::cerr << "User should not be move constructible. Did you remember to "
                  "delete the move constructor?\n";
@@ -123,7 +129,8 @@ template <typename TUser> void test_move_constructor() {
   }
 }
 
-template <typename TUser> void test_move_assignment() {
+template <typename TUser>
+void test_move_assignment() {
   if constexpr (std::is_move_assignable_v<TUser>) {
     std::cerr << "User should not be move assignable. Did you remember to "
                  "delete the move assignment operator?\n";
@@ -133,10 +140,11 @@ template <typename TUser> void test_move_assignment() {
 
 template <typename T>
 concept compound_assignable = requires(T a, T b) {
-  { a += b } -> std::same_as<T&>;
+  { a += b } -> std::same_as<T &>;
 };
 
-template <typename TUser> void test_compound_assignment() {
+template <typename TUser>
+void test_compound_assignment() {
   if constexpr (printable<TUser>) {
     if constexpr (compound_assignable<TUser>) {
       TUser a("Alice");
@@ -162,7 +170,8 @@ concept comparable = requires(TUser a, TUser b) {
   { a < b } -> std::same_as<bool>;
 };
 
-template <typename TUser> void test_comparable() {
+template <typename TUser>
+void test_comparable() {
   if constexpr (comparable<TUser>) {
     TUser a("A");
     TUser b("B");
@@ -170,7 +179,7 @@ template <typename TUser> void test_comparable() {
 
     std::vector<std::pair<TUser, TUser>> pairs = {{a, b}, {b, a}, {b, c}, {c, b}, {c, a}, {a, c}};
     std::cout << std::boolalpha;
-    for (const auto& [left, right] : pairs) {
+    for (const auto &[left, right] : pairs) {
       std::cout << left.get_name() << " < " << right.get_name() << " is " << (left < right) << "\n";
     }
   } else {
@@ -193,7 +202,7 @@ const std::unordered_map<std::string, std::function<void()>> test_functions = {
     {"compound_assignment", test_compound_assignment<User>},
     {"comparable", test_comparable<User>}};
 
-int main(int argc, char* argv[]) {
+int main(int argc, char *argv[]) {
   if (argc == 2) {
     if (test_functions.find(argv[1]) != test_functions.end()) {
       test_functions.at(argv[1])();
@@ -205,4 +214,9 @@ int main(int argc, char* argv[]) {
   }
 
   return run_autograder();
+
+  // User a("Alice");
+  // a.add_friend("Bob");
+  // a.add_friend("Charlie");
+  // std::cout << a << "\n" << a << "\n";
 }

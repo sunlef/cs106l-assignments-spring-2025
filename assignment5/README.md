@@ -1,3 +1,35 @@
+```
+⏳ Installing autograder packages (this may take a few minutes)...
+✅ Autograder packages installed.
+
+Running test: Part 1: operator<<... 🧪                                           
+✅ Part 1: operator<< passed! 🚀 
+
+Running test: Part 2: Destructor... 🧪                                           
+✅ Part 2: Destructor passed! 🚀 
+
+Running test: Part 2: Copy Constructor... 🧪                                     
+✅ Part 2: Copy Constructor passed! 🚀 
+
+Running test: Part 2: Copy Assignment Operator... 🧪                             
+✅ Part 2: Copy Assignment Operator passed! 🚀 
+
+Running test: Part 2: Move Constructor... 🧪                                     
+✅ Part 2: Move Constructor passed! 🚀 
+
+Running test: Part 2: Move Assignment Operator... 🧪                             
+✅ Part 2: Move Assignment Operator passed! 🚀 
+
+Running test: Part 3: operator+=... 🧪                                           
+✅ Part 3: operator+= passed! 🚀 
+
+Running test: Part 3: operator<... 🧪                                            
+✅ Part 3: operator< passed! 🚀 
+
+🚀🚀🚀 Congratulations, your code passed all the autograder tests! 🚀🚀🚀        
+```
+below is the original text.
+
 <p align="center">
   <img src="docs/logo.jpeg" alt="A logo of Treebook, a fictional Stanford-based social media startup" style="width: 300px; height: auto;" />
 </p>
