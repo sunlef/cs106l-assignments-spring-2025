@@ -1,3 +1,18 @@
+```
+⏳ Installing autograder packages (this may take a few minutes)...
+✅ Autograder packages installed.
+
+Running test: Present Courses... 🧪                                              
+✅ Present Courses passed! 🚀 
+
+Running test: Missing Courses... 🧪                                              
+✅ Missing Courses passed! 🚀 
+
+🚀🚀🚀 Congratulations, your code passed all the autograder tests! 🚀🚀🚀        
+```
+
+below is the original text.
+
 # Assignment 6: Explore Courses
 
 Due Friday, May 30th at 11:59PM
