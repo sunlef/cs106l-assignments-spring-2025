@@ -1,3 +1,30 @@
+```
+⏳ Installing autograder packages (this may take a few minutes)...
+✅ Autograder packages installed.
+
+Running test: Part 1: Destructor... 🧪                                           
+✅ Part 1: Destructor passed! 🚀 
+
+Running test: Part 1: Deleted copy constructor and assignment... 🧪              
+✅ Part 1: Deleted copy constructor and assignment passed! 🚀 
+
+Running test: Part 1: Move constructor... 🧪                                     
+✅ Part 1: Move constructor passed! 🚀 
+
+Running test: Part 1: Move assignment... 🧪                                      
+✅ Part 1: Move assignment passed! 🚀 
+
+Running test: Part 1: Move assignment (self-assignment)... 🧪                    
+✅ Part 1: Move assignment (self-assignment) passed! 🚀 
+
+Running test: Part 2: Linked List... 🧪                                          
+✅ Part 2: Linked List passed! 🚀 
+
+🚀🚀🚀 Congratulations, your code passed all the autograder tests! 🚀🚀🚀        
+
+```
+
+below is the original text.
 <p align="center">
   <img src="docs/art.png" />
 </p>
